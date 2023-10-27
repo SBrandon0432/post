@@ -10,6 +10,14 @@
       "StackName": "amplify-post-dev-132812",
       "StackId": "arn:aws:cloudformation:us-east-1:722921029415:stack/amplify-post-dev-132812/35703a90-74ee-11ee-a6f0-0e2dbab2f5df",
       "AmplifyAppId": "dt1o23ozxlgta"
+    },
+    "categories": {
+      "auth": {
+        "postcbb1b48a": {}
+      },
+      "api": {
+        "post": {}
+      }
     }
   }
 }
