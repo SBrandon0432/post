@@ -19,7 +19,15 @@ const RootQuery = new GraphQLObjectType({
         user: {
             type: UserType,
             args: { id: { type: GraphQLString } },
-            resolve(parent, args) {},
+            resolve(parent, args) {
+                let user = {
+                    id: "1234",
+                    age: 24,
+                    name: "sam",
+                };
+
+                return user;
+            },
         },
     },
 });
