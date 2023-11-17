@@ -1,5 +1,4 @@
 const graphql = require("graphql");
-const { resolve } = require("path");
 const {
     GraphQLObjectType,
     GraphQLString,
@@ -108,6 +107,12 @@ const RootQuery = new GraphQLObjectType({
                 });
             },
         },
+        users: {
+            type: new GraphQLList(UserType),
+            resolve() {
+                return userData;
+            },
+        },
         hobby: {
             type: HobbyType,
             args: { id: { type: GraphQLID } },
@@ -117,6 +122,12 @@ const RootQuery = new GraphQLObjectType({
                 });
             },
         },
+        hobbies: {
+            type: new GraphQLList(HobbyType),
+            resolve() {
+                return hobbies;
+            },
+        },
         post: {
             type: PostType,
             args: { id: { type: GraphQLID } },
@@ -124,6 +135,12 @@ const RootQuery = new GraphQLObjectType({
                 return postsData.find(({ id }) => {
                     return id === args.id;
                 });
+            },
+        },
+        posts: {
+            type: new GraphQLList(PostType),
+            resolve() {
+                return postsData;
             },
         },
     },
