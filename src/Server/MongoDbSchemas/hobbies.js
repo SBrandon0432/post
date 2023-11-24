@@ -4,6 +4,7 @@ const MSchema = mongoose.Schema;
 const hobbiesSchema = new MSchema({
     title: String,
     description: String,
+    userId: String,
 });
 
 module.exports = mongoose.model("hobbies", hobbiesSchema);

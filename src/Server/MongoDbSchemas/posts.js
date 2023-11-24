@@ -3,6 +3,7 @@ const MSchema = mongoose.Schema;
 
 const postSchema = MSchema({
     comment: String,
+    userId: String,
 });
 
 module.exports = mongoose.model("posts", postSchema);
