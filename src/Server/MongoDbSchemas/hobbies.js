@@ -1,0 +1,9 @@
+const mongoose = require("mongoose");
+const MSchema = mongoose.Schema;
+
+const hobbiesSchema = new MSchema({
+    title: String,
+    description: String,
+});
+
+module.exports = mongoose.model("hobbies", hobbiesSchema);
