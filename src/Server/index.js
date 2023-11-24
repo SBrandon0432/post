@@ -2,12 +2,14 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
 const bodyParser = require("body-parser");
+const cors = require("cors");
 const schema = require("./Schemas/schema");
 const mongoose = require("mongoose");
 const { graphqlHTTP } = require("express-graphql");
 app.use(express.static("/"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(cors());
 
 const connection =
     "mongodb+srv://sam:VbOw8VQLPXtqkWBO@clusterpost0.zbutcaw.mongodb.net/?retryWrites=true&w=majority";
