@@ -7,11 +7,11 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { fetchByPath, validateField } from "./utils";
-import { API } from "aws-amplify";
+import { fetchByPath, getOverrideProps, validateField } from "./utils";
+import { generateClient } from "aws-amplify/api";
 import { getComment } from "../graphql/queries";
 import { updateComment } from "../graphql/mutations";
+const client = generateClient();
 export default function CommentUpdateForm(props) {
   const {
     id: idProp,
@@ -41,7 +41,7 @@ export default function CommentUpdateForm(props) {
     const queryData = async () => {
       const record = idProp
         ? (
-            await API.graphql({
+            await client.graphql({
               query: getComment.replaceAll("__typename", ""),
               variables: { id: idProp },
             })
@@ -111,7 +111,7 @@ export default function CommentUpdateForm(props) {
               modelFields[key] = null;
             }
           });
-          await API.graphql({
+          await client.graphql({
             query: updateComment.replaceAll("__typename", ""),
             variables: {
               input: {

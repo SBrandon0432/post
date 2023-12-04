@@ -8,176 +8,75 @@ type GeneratedSubscription<InputType, OutputType> = string & {
   __generatedSubscriptionOutput: OutputType;
 };
 
-export const newOnCreatePost = /* GraphQL */ `subscription NewOnCreatePost {
-  newOnCreatePost {
+export const onCreatePostDataModelTesting = /* GraphQL */ `subscription OnCreatePostDataModelTesting(
+  $id: ID
+  $title: String
+  $content: String
+  $coverImage: String
+) {
+  onCreatePostDataModelTesting(
+    id: $id
+    title: $title
+    content: $content
+    coverImage: $coverImage
+  ) {
     id
     title
     content
-    username
     coverImage
-    comments {
-      nextToken
-      __typename
-    }
-    createdAt
-    updatedAt
+    username
     __typename
   }
 }
 ` as GeneratedSubscription<
-  APITypes.NewOnCreatePostSubscriptionVariables,
-  APITypes.NewOnCreatePostSubscription
+  APITypes.OnCreatePostDataModelTestingSubscriptionVariables,
+  APITypes.OnCreatePostDataModelTestingSubscription
 >;
-export const onCreatePost = /* GraphQL */ `subscription OnCreatePost(
-  $filter: ModelSubscriptionPostFilterInput
-  $username: String
+export const onUpdatePostDataModelTesting = /* GraphQL */ `subscription OnUpdatePostDataModelTesting(
+  $id: ID
+  $title: String
+  $content: String
+  $coverImage: String
 ) {
-  onCreatePost(filter: $filter, username: $username) {
+  onUpdatePostDataModelTesting(
+    id: $id
+    title: $title
+    content: $content
+    coverImage: $coverImage
+  ) {
     id
     title
     content
-    username
     coverImage
-    comments {
-      nextToken
-      __typename
-    }
-    createdAt
-    updatedAt
+    username
     __typename
   }
 }
 ` as GeneratedSubscription<
-  APITypes.OnCreatePostSubscriptionVariables,
-  APITypes.OnCreatePostSubscription
+  APITypes.OnUpdatePostDataModelTestingSubscriptionVariables,
+  APITypes.OnUpdatePostDataModelTestingSubscription
 >;
-export const onUpdatePost = /* GraphQL */ `subscription OnUpdatePost(
-  $filter: ModelSubscriptionPostFilterInput
-  $username: String
+export const onDeletePostDataModelTesting = /* GraphQL */ `subscription OnDeletePostDataModelTesting(
+  $id: ID
+  $title: String
+  $content: String
+  $coverImage: String
 ) {
-  onUpdatePost(filter: $filter, username: $username) {
+  onDeletePostDataModelTesting(
+    id: $id
+    title: $title
+    content: $content
+    coverImage: $coverImage
+  ) {
     id
     title
     content
-    username
     coverImage
-    comments {
-      nextToken
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedSubscription<
-  APITypes.OnUpdatePostSubscriptionVariables,
-  APITypes.OnUpdatePostSubscription
->;
-export const onDeletePost = /* GraphQL */ `subscription OnDeletePost(
-  $filter: ModelSubscriptionPostFilterInput
-  $username: String
-) {
-  onDeletePost(filter: $filter, username: $username) {
-    id
-    title
-    content
     username
-    coverImage
-    comments {
-      nextToken
-      __typename
-    }
-    createdAt
-    updatedAt
     __typename
   }
 }
 ` as GeneratedSubscription<
-  APITypes.OnDeletePostSubscriptionVariables,
-  APITypes.OnDeletePostSubscription
->;
-export const onCreateComment = /* GraphQL */ `subscription OnCreateComment(
-  $filter: ModelSubscriptionCommentFilterInput
-  $createdBy: String
-) {
-  onCreateComment(filter: $filter, createdBy: $createdBy) {
-    id
-    message
-    post {
-      id
-      title
-      content
-      username
-      coverImage
-      createdAt
-      updatedAt
-      __typename
-    }
-    postID
-    createdAt
-    updatedAt
-    createdBy
-    __typename
-  }
-}
-` as GeneratedSubscription<
-  APITypes.OnCreateCommentSubscriptionVariables,
-  APITypes.OnCreateCommentSubscription
->;
-export const onUpdateComment = /* GraphQL */ `subscription OnUpdateComment(
-  $filter: ModelSubscriptionCommentFilterInput
-  $createdBy: String
-) {
-  onUpdateComment(filter: $filter, createdBy: $createdBy) {
-    id
-    message
-    post {
-      id
-      title
-      content
-      username
-      coverImage
-      createdAt
-      updatedAt
-      __typename
-    }
-    postID
-    createdAt
-    updatedAt
-    createdBy
-    __typename
-  }
-}
-` as GeneratedSubscription<
-  APITypes.OnUpdateCommentSubscriptionVariables,
-  APITypes.OnUpdateCommentSubscription
->;
-export const onDeleteComment = /* GraphQL */ `subscription OnDeleteComment(
-  $filter: ModelSubscriptionCommentFilterInput
-  $createdBy: String
-) {
-  onDeleteComment(filter: $filter, createdBy: $createdBy) {
-    id
-    message
-    post {
-      id
-      title
-      content
-      username
-      coverImage
-      createdAt
-      updatedAt
-      __typename
-    }
-    postID
-    createdAt
-    updatedAt
-    createdBy
-    __typename
-  }
-}
-` as GeneratedSubscription<
-  APITypes.OnDeleteCommentSubscriptionVariables,
-  APITypes.OnDeleteCommentSubscription
+  APITypes.OnDeletePostDataModelTestingSubscriptionVariables,
+  APITypes.OnDeletePostDataModelTestingSubscription
 >;

@@ -8,54 +8,26 @@ type GeneratedQuery<InputType, OutputType> = string & {
   __generatedQueryOutput: OutputType;
 };
 
-export const getPost = /* GraphQL */ `query GetPost($id: ID!) {
-  getPost(id: $id) {
+export const getPostDataModelTesting = /* GraphQL */ `query GetPostDataModelTesting($id: ID!) {
+  getPostDataModelTesting(id: $id) {
     id
     title
     content
-    username
     coverImage
-    comments {
-      nextToken
-      __typename
-    }
-    createdAt
-    updatedAt
+    username
     __typename
   }
 }
-` as GeneratedQuery<APITypes.GetPostQueryVariables, APITypes.GetPostQuery>;
-export const listPosts = /* GraphQL */ `query ListPosts(
-  $filter: ModelPostFilterInput
+` as GeneratedQuery<
+  APITypes.GetPostDataModelTestingQueryVariables,
+  APITypes.GetPostDataModelTestingQuery
+>;
+export const listPostDataModelTestings = /* GraphQL */ `query ListPostDataModelTestings(
+  $filter: TablePostDataModelTestingFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  listPosts(filter: $filter, limit: $limit, nextToken: $nextToken) {
-    items {
-      id
-      title
-      content
-      username
-      coverImage
-      createdAt
-      updatedAt
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-` as GeneratedQuery<APITypes.ListPostsQueryVariables, APITypes.ListPostsQuery>;
-export const postsByUsername = /* GraphQL */ `query PostsByUsername(
-  $username: String!
-  $sortDirection: ModelSortDirection
-  $filter: ModelPostFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  postsByUsername(
-    username: $username
-    sortDirection: $sortDirection
+  listPostDataModelTestings(
     filter: $filter
     limit: $limit
     nextToken: $nextToken
@@ -64,58 +36,8 @@ export const postsByUsername = /* GraphQL */ `query PostsByUsername(
       id
       title
       content
-      username
       coverImage
-      createdAt
-      updatedAt
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-` as GeneratedQuery<
-  APITypes.PostsByUsernameQueryVariables,
-  APITypes.PostsByUsernameQuery
->;
-export const getComment = /* GraphQL */ `query GetComment($id: ID!) {
-  getComment(id: $id) {
-    id
-    message
-    post {
-      id
-      title
-      content
       username
-      coverImage
-      createdAt
-      updatedAt
-      __typename
-    }
-    postID
-    createdAt
-    updatedAt
-    createdBy
-    __typename
-  }
-}
-` as GeneratedQuery<
-  APITypes.GetCommentQueryVariables,
-  APITypes.GetCommentQuery
->;
-export const listComments = /* GraphQL */ `query ListComments(
-  $filter: ModelCommentFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  listComments(filter: $filter, limit: $limit, nextToken: $nextToken) {
-    items {
-      id
-      message
-      postID
-      createdAt
-      updatedAt
-      createdBy
       __typename
     }
     nextToken
@@ -123,37 +45,6 @@ export const listComments = /* GraphQL */ `query ListComments(
   }
 }
 ` as GeneratedQuery<
-  APITypes.ListCommentsQueryVariables,
-  APITypes.ListCommentsQuery
->;
-export const commentsByPostID = /* GraphQL */ `query CommentsByPostID(
-  $postID: ID!
-  $sortDirection: ModelSortDirection
-  $filter: ModelCommentFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  commentsByPostID(
-    postID: $postID
-    sortDirection: $sortDirection
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      message
-      postID
-      createdAt
-      updatedAt
-      createdBy
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-` as GeneratedQuery<
-  APITypes.CommentsByPostIDQueryVariables,
-  APITypes.CommentsByPostIDQuery
+  APITypes.ListPostDataModelTestingsQueryVariables,
+  APITypes.ListPostDataModelTestingsQuery
 >;
