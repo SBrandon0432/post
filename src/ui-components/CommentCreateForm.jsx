@@ -7,10 +7,10 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { fetchByPath, validateField } from "./utils";
-import { API } from "aws-amplify";
+import { fetchByPath, getOverrideProps, validateField } from "./utils";
+import { generateClient } from "aws-amplify/api";
 import { createComment } from "../graphql/mutations";
+const client = generateClient();
 export default function CommentCreateForm(props) {
   const {
     clearOnSuccess = true,
@@ -90,7 +90,7 @@ export default function CommentCreateForm(props) {
               modelFields[key] = null;
             }
           });
-          await API.graphql({
+          await client.graphql({
             query: createComment.replaceAll("__typename", ""),
             variables: {
               input: {

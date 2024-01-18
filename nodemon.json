@@ -1,0 +1,7 @@
+{
+    "env": {
+        "mongoDatabase": "ClusterPost0",
+        "mongoUserName": "sam",
+        "mongoUserPassword": "VbOw8VQLPXtqkWBO"
+    }
+}
