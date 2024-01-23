@@ -8,75 +8,51 @@ type GeneratedSubscription<InputType, OutputType> = string & {
   __generatedSubscriptionOutput: OutputType;
 };
 
-export const onCreatePostDataModelTesting = /* GraphQL */ `subscription OnCreatePostDataModelTesting(
-  $id: ID
-  $title: String
-  $content: String
-  $coverImage: String
-) {
-  onCreatePostDataModelTesting(
-    id: $id
-    title: $title
-    content: $content
-    coverImage: $coverImage
-  ) {
+export const onCreatePost = /* GraphQL */ `subscription OnCreatePost($filter: ModelSubscriptionPostFilterInput) {
+  onCreatePost(filter: $filter) {
     id
     title
     content
-    coverImage
     username
+    coverImage
+    createdAt
+    updatedAt
     __typename
   }
 }
 ` as GeneratedSubscription<
-  APITypes.OnCreatePostDataModelTestingSubscriptionVariables,
-  APITypes.OnCreatePostDataModelTestingSubscription
+  APITypes.OnCreatePostSubscriptionVariables,
+  APITypes.OnCreatePostSubscription
 >;
-export const onUpdatePostDataModelTesting = /* GraphQL */ `subscription OnUpdatePostDataModelTesting(
-  $id: ID
-  $title: String
-  $content: String
-  $coverImage: String
-) {
-  onUpdatePostDataModelTesting(
-    id: $id
-    title: $title
-    content: $content
-    coverImage: $coverImage
-  ) {
+export const onUpdatePost = /* GraphQL */ `subscription OnUpdatePost($filter: ModelSubscriptionPostFilterInput) {
+  onUpdatePost(filter: $filter) {
     id
     title
     content
-    coverImage
     username
+    coverImage
+    createdAt
+    updatedAt
     __typename
   }
 }
 ` as GeneratedSubscription<
-  APITypes.OnUpdatePostDataModelTestingSubscriptionVariables,
-  APITypes.OnUpdatePostDataModelTestingSubscription
+  APITypes.OnUpdatePostSubscriptionVariables,
+  APITypes.OnUpdatePostSubscription
 >;
-export const onDeletePostDataModelTesting = /* GraphQL */ `subscription OnDeletePostDataModelTesting(
-  $id: ID
-  $title: String
-  $content: String
-  $coverImage: String
-) {
-  onDeletePostDataModelTesting(
-    id: $id
-    title: $title
-    content: $content
-    coverImage: $coverImage
-  ) {
+export const onDeletePost = /* GraphQL */ `subscription OnDeletePost($filter: ModelSubscriptionPostFilterInput) {
+  onDeletePost(filter: $filter) {
     id
     title
     content
-    coverImage
     username
+    coverImage
+    createdAt
+    updatedAt
     __typename
   }
 }
 ` as GeneratedSubscription<
-  APITypes.OnDeletePostDataModelTestingSubscriptionVariables,
-  APITypes.OnDeletePostDataModelTestingSubscription
+  APITypes.OnDeletePostSubscriptionVariables,
+  APITypes.OnDeletePostSubscription
 >;
