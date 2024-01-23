@@ -6,7 +6,7 @@ import { UserContextProps } from "../Components/Context/contextTypesAndInterface
 export const authListener = async ({
     singedIN,
     setSignedIN,
-}: UserContextProps) => {
+}: Pick<UserContextProps, "singedIN" | "setSignedIN">) => {
     Hub.listen("auth", (data) => {
         switch (data?.payload?.event) {
             case "signedIn":
@@ -21,4 +21,12 @@ export const authListener = async ({
     } catch (err) {
         console.error(err);
     }
+};
+
+export const checkUser = async ({
+    setUser,
+}: Pick<UserContextProps, "setUser">) => {
+    const user = await getCurrentUser().then(() => {
+        setUser(user);
+    });
 };

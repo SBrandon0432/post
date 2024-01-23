@@ -27,7 +27,7 @@ export const NavItems = () => {
                 </Nav.Link>
             </Nav.Item>
             <Nav.Item className="path">
-                <Nav.Link className="link" href={Paths.HOME}>
+                <Nav.Link className="link" href={Paths.PROFILE}>
                     Profile
                 </Nav.Link>
             </Nav.Item>
