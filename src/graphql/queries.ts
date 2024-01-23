@@ -8,50 +8,26 @@ type GeneratedQuery<InputType, OutputType> = string & {
   __generatedQueryOutput: OutputType;
 };
 
-export const getPost = /* GraphQL */ `query GetPost($id: ID!) {
-  getPost(id: $id) {
+export const getPostTableApi_01_23_24 = /* GraphQL */ `query GetPostTableApi_01_23_24($id: String!) {
+  getPostTableApi_01_23_24(id: $id) {
     id
     title
     content
     username
     coverImage
-    createdAt
-    updatedAt
     __typename
   }
 }
-` as GeneratedQuery<APITypes.GetPostQueryVariables, APITypes.GetPostQuery>;
-export const listPosts = /* GraphQL */ `query ListPosts(
-  $filter: ModelPostFilterInput
+` as GeneratedQuery<
+  APITypes.GetPostTableApi_01_23_24QueryVariables,
+  APITypes.GetPostTableApi_01_23_24Query
+>;
+export const listPostTableApi_01_23_24s = /* GraphQL */ `query ListPostTableApi_01_23_24s(
+  $filter: TablePostTableApi_01_23_24FilterInput
   $limit: Int
   $nextToken: String
 ) {
-  listPosts(filter: $filter, limit: $limit, nextToken: $nextToken) {
-    items {
-      id
-      title
-      content
-      username
-      coverImage
-      createdAt
-      updatedAt
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-` as GeneratedQuery<APITypes.ListPostsQueryVariables, APITypes.ListPostsQuery>;
-export const postsByUsername = /* GraphQL */ `query PostsByUsername(
-  $username: String!
-  $sortDirection: ModelSortDirection
-  $filter: ModelPostFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  postsByUsername(
-    username: $username
-    sortDirection: $sortDirection
+  listPostTableApi_01_23_24s(
     filter: $filter
     limit: $limit
     nextToken: $nextToken
@@ -62,8 +38,6 @@ export const postsByUsername = /* GraphQL */ `query PostsByUsername(
       content
       username
       coverImage
-      createdAt
-      updatedAt
       __typename
     }
     nextToken
@@ -71,6 +45,6 @@ export const postsByUsername = /* GraphQL */ `query PostsByUsername(
   }
 }
 ` as GeneratedQuery<
-  APITypes.PostsByUsernameQueryVariables,
-  APITypes.PostsByUsernameQuery
+  APITypes.ListPostTableApi_01_23_24sQueryVariables,
+  APITypes.ListPostTableApi_01_23_24sQuery
 >;

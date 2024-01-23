@@ -1,9 +1,5 @@
 import { ReactNode, createContext, useState } from "react";
-
-interface UserContextProps {
-    singedIN: boolean;
-    setSignedIN(singedIN: boolean): void;
-}
+import { UserContextProps } from "./contextTypesAndInterfaces";
 
 export const myUserContext = createContext<UserContextProps>({
     singedIN: false,
@@ -16,6 +12,7 @@ interface Props {
 
 export const MyUserContextProvider = ({ children }: Props) => {
     const [singedIN, setSignedIN] = useState<boolean>(false);
+
     return (
         <myUserContext.Provider
             value={{

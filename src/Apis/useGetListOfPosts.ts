@@ -1,6 +1,6 @@
 import { generateClient } from "aws-amplify/api";
 import { useEffect, useState } from "react";
-import { listPosts } from "../graphql/queries";
+import { listPostTableApi_01_23_24s } from "../graphql/queries";
 
 export const useGetListOfPosts = async () => {
     const [posts, setPosts] = useState<any>([]);
@@ -10,7 +10,7 @@ export const useGetListOfPosts = async () => {
         async function fetchPosts() {
             const testing = await client
                 .graphql({
-                    query: listPosts,
+                    query: listPostTableApi_01_23_24s,
                 })
                 .catch((err) => console.error(err, " err"));
             setPosts(testing);

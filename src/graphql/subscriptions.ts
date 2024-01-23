@@ -8,51 +8,81 @@ type GeneratedSubscription<InputType, OutputType> = string & {
   __generatedSubscriptionOutput: OutputType;
 };
 
-export const onCreatePost = /* GraphQL */ `subscription OnCreatePost($filter: ModelSubscriptionPostFilterInput) {
-  onCreatePost(filter: $filter) {
+export const onCreatePostTableApi_01_23_24 = /* GraphQL */ `subscription OnCreatePostTableApi_01_23_24(
+  $id: String
+  $title: String
+  $content: String
+  $username: String
+  $coverImage: String
+) {
+  onCreatePostTableApi_01_23_24(
+    id: $id
+    title: $title
+    content: $content
+    username: $username
+    coverImage: $coverImage
+  ) {
     id
     title
     content
     username
     coverImage
-    createdAt
-    updatedAt
     __typename
   }
 }
 ` as GeneratedSubscription<
-  APITypes.OnCreatePostSubscriptionVariables,
-  APITypes.OnCreatePostSubscription
+  APITypes.OnCreatePostTableApi_01_23_24SubscriptionVariables,
+  APITypes.OnCreatePostTableApi_01_23_24Subscription
 >;
-export const onUpdatePost = /* GraphQL */ `subscription OnUpdatePost($filter: ModelSubscriptionPostFilterInput) {
-  onUpdatePost(filter: $filter) {
+export const onUpdatePostTableApi_01_23_24 = /* GraphQL */ `subscription OnUpdatePostTableApi_01_23_24(
+  $id: String
+  $title: String
+  $content: String
+  $username: String
+  $coverImage: String
+) {
+  onUpdatePostTableApi_01_23_24(
+    id: $id
+    title: $title
+    content: $content
+    username: $username
+    coverImage: $coverImage
+  ) {
     id
     title
     content
     username
     coverImage
-    createdAt
-    updatedAt
     __typename
   }
 }
 ` as GeneratedSubscription<
-  APITypes.OnUpdatePostSubscriptionVariables,
-  APITypes.OnUpdatePostSubscription
+  APITypes.OnUpdatePostTableApi_01_23_24SubscriptionVariables,
+  APITypes.OnUpdatePostTableApi_01_23_24Subscription
 >;
-export const onDeletePost = /* GraphQL */ `subscription OnDeletePost($filter: ModelSubscriptionPostFilterInput) {
-  onDeletePost(filter: $filter) {
+export const onDeletePostTableApi_01_23_24 = /* GraphQL */ `subscription OnDeletePostTableApi_01_23_24(
+  $id: String
+  $title: String
+  $content: String
+  $username: String
+  $coverImage: String
+) {
+  onDeletePostTableApi_01_23_24(
+    id: $id
+    title: $title
+    content: $content
+    username: $username
+    coverImage: $coverImage
+  ) {
     id
     title
     content
     username
     coverImage
-    createdAt
-    updatedAt
     __typename
   }
 }
 ` as GeneratedSubscription<
-  APITypes.OnDeletePostSubscriptionVariables,
-  APITypes.OnDeletePostSubscription
+  APITypes.OnDeletePostTableApi_01_23_24SubscriptionVariables,
+  APITypes.OnDeletePostTableApi_01_23_24Subscription
 >;
