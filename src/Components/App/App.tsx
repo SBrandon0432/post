@@ -3,7 +3,8 @@ import { Paths } from "../../Types/types";
 import { MyUserContextProvider } from "../Context/MyUserContext";
 import { Home } from "../Home/Home";
 import { NavBar } from "../NavBar/NavBar";
-import { Profile } from "../Profile/Profile";
+
+import Profile from "../Profile/Profile";
 import "./AppS.scss";
 
 export const App = () => {

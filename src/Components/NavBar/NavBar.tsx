@@ -5,7 +5,7 @@ import { NavItems } from "./NavItems/NavItems";
 
 export const NavBar = () => {
     return (
-        <Navbar className=" NavBar" fixed="top">
+        <Navbar className="NavBar" fixed="top">
             <Container>
                 <Navbar.Brand href="/home" className="brand">
                     Brand link
