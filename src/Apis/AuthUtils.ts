@@ -30,8 +30,6 @@ export const checkUser = async ({
 }: Pick<UserContextProps, "setUser" | "setUserAttributes">) => {
     const user = await getCurrentUser();
     const userAttributes = await fetchUserAttributes();
-    // console.log(userAttributes);
-    // console.log(user);
     setUser(user);
     setUserAttributes(userAttributes);
 };

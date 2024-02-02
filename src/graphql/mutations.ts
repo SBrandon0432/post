@@ -8,51 +8,60 @@ type GeneratedMutation<InputType, OutputType> = string & {
   __generatedMutationOutput: OutputType;
 };
 
-export const createPostTableApi_01_23_24 = /* GraphQL */ `mutation CreatePostTableApi_01_23_24(
-  $input: CreatePostTableApi_01_23_24Input!
+export const createPost = /* GraphQL */ `mutation CreatePost(
+  $input: CreatePostInput!
+  $condition: ModelPostConditionInput
 ) {
-  createPostTableApi_01_23_24(input: $input) {
+  createPost(input: $input, condition: $condition) {
     id
     title
     content
     username
     coverImage
+    createdAt
+    updatedAt
     __typename
   }
 }
 ` as GeneratedMutation<
-  APITypes.CreatePostTableApi_01_23_24MutationVariables,
-  APITypes.CreatePostTableApi_01_23_24Mutation
+  APITypes.CreatePostMutationVariables,
+  APITypes.CreatePostMutation
 >;
-export const updatePostTableApi_01_23_24 = /* GraphQL */ `mutation UpdatePostTableApi_01_23_24(
-  $input: UpdatePostTableApi_01_23_24Input!
+export const updatePost = /* GraphQL */ `mutation UpdatePost(
+  $input: UpdatePostInput!
+  $condition: ModelPostConditionInput
 ) {
-  updatePostTableApi_01_23_24(input: $input) {
+  updatePost(input: $input, condition: $condition) {
     id
     title
     content
     username
     coverImage
+    createdAt
+    updatedAt
     __typename
   }
 }
 ` as GeneratedMutation<
-  APITypes.UpdatePostTableApi_01_23_24MutationVariables,
-  APITypes.UpdatePostTableApi_01_23_24Mutation
+  APITypes.UpdatePostMutationVariables,
+  APITypes.UpdatePostMutation
 >;
-export const deletePostTableApi_01_23_24 = /* GraphQL */ `mutation DeletePostTableApi_01_23_24(
-  $input: DeletePostTableApi_01_23_24Input!
+export const deletePost = /* GraphQL */ `mutation DeletePost(
+  $input: DeletePostInput!
+  $condition: ModelPostConditionInput
 ) {
-  deletePostTableApi_01_23_24(input: $input) {
+  deletePost(input: $input, condition: $condition) {
     id
     title
     content
     username
     coverImage
+    createdAt
+    updatedAt
     __typename
   }
 }
 ` as GeneratedMutation<
-  APITypes.DeletePostTableApi_01_23_24MutationVariables,
-  APITypes.DeletePostTableApi_01_23_24Mutation
+  APITypes.DeletePostMutationVariables,
+  APITypes.DeletePostMutation
 >;
