@@ -1,6 +1,6 @@
 import { fetchUserAttributes, getCurrentUser, signOut } from "aws-amplify/auth";
 import { Hub } from "aws-amplify/utils";
-
+import { v4 as uuidv4 } from "uuid";
 import { UserContextProps } from "../Components/Context/contextTypesAndInterfaces";
 
 export const authListener = async ({
@@ -41,3 +41,8 @@ export async function handleSignOut() {
         console.log("error signing out: ", error);
     }
 }
+
+export const createUUID = () => {
+    const uuid = uuidv4();
+    return uuid;
+};

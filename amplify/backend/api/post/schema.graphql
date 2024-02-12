@@ -11,7 +11,7 @@ type Post
             { allow: public, operations: [read] }
         ]
     ) {
-    id: ID!
+    id: ID
     title: String!
     content: String!
     username: String

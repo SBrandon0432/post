@@ -62,7 +62,7 @@ export type ModelSizeInput = {
 
 export type Post = {
   __typename: "Post",
-  id: string,
+  id?: string | null,
   title: string,
   content: string,
   username?: string | null,
@@ -169,7 +169,7 @@ export type CreatePostMutationVariables = {
 export type CreatePostMutation = {
   createPost?:  {
     __typename: "Post",
-    id: string,
+    id?: string | null,
     title: string,
     content: string,
     username?: string | null,
@@ -187,7 +187,7 @@ export type UpdatePostMutationVariables = {
 export type UpdatePostMutation = {
   updatePost?:  {
     __typename: "Post",
-    id: string,
+    id?: string | null,
     title: string,
     content: string,
     username?: string | null,
@@ -205,7 +205,7 @@ export type DeletePostMutationVariables = {
 export type DeletePostMutation = {
   deletePost?:  {
     __typename: "Post",
-    id: string,
+    id?: string | null,
     title: string,
     content: string,
     username?: string | null,
@@ -222,7 +222,7 @@ export type GetPostQueryVariables = {
 export type GetPostQuery = {
   getPost?:  {
     __typename: "Post",
-    id: string,
+    id?: string | null,
     title: string,
     content: string,
     username?: string | null,
@@ -243,7 +243,7 @@ export type ListPostsQuery = {
     __typename: "ModelPostConnection",
     items:  Array< {
       __typename: "Post",
-      id: string,
+      id?: string | null,
       title: string,
       content: string,
       username?: string | null,
@@ -268,7 +268,7 @@ export type PostsByUsernameQuery = {
     __typename: "ModelPostConnection",
     items:  Array< {
       __typename: "Post",
-      id: string,
+      id?: string | null,
       title: string,
       content: string,
       username?: string | null,
@@ -288,7 +288,7 @@ export type OnCreatePostSubscriptionVariables = {
 export type OnCreatePostSubscription = {
   onCreatePost?:  {
     __typename: "Post",
-    id: string,
+    id?: string | null,
     title: string,
     content: string,
     username?: string | null,
@@ -306,7 +306,7 @@ export type OnUpdatePostSubscriptionVariables = {
 export type OnUpdatePostSubscription = {
   onUpdatePost?:  {
     __typename: "Post",
-    id: string,
+    id?: string | null,
     title: string,
     content: string,
     username?: string | null,
@@ -324,7 +324,7 @@ export type OnDeletePostSubscriptionVariables = {
 export type OnDeletePostSubscription = {
   onDeletePost?:  {
     __typename: "Post",
-    id: string,
+    id?: string | null,
     title: string,
     content: string,
     username?: string | null,

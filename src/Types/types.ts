@@ -10,4 +10,5 @@ export interface postsProps {
 export enum Paths {
     HOME = "/",
     PROFILE = "/Profile",
+    CREATEPOST = "/CreatePost",
 }
