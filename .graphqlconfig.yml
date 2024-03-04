@@ -1,16 +1,15 @@
 projects:
-  MyPostApiTesting:
+  post:
     schemaPath: src/graphql/schema.json
     includes:
       - src/graphql/**/*.ts
     excludes:
       - ./amplify/**
-      - src/API.ts
     extensions:
       amplify:
         codeGenTarget: typescript
         generatedFileName: src/API.ts
         docsFilePath: src/graphql
-        region: us-east-1
-        apiId: uaj6hbnxivghxcw63gqqw4iib4
-        maxDepth: 2
+extensions:
+  amplify:
+    version: 3

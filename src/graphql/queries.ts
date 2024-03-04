@@ -8,26 +8,50 @@ type GeneratedQuery<InputType, OutputType> = string & {
   __generatedQueryOutput: OutputType;
 };
 
-export const getPostDataModelTesting = /* GraphQL */ `query GetPostDataModelTesting($id: ID!) {
-  getPostDataModelTesting(id: $id) {
+export const getPost = /* GraphQL */ `query GetPost($id: ID!) {
+  getPost(id: $id) {
     id
     title
     content
-    coverImage
     username
+    coverImage
+    createdAt
+    updatedAt
     __typename
   }
 }
-` as GeneratedQuery<
-  APITypes.GetPostDataModelTestingQueryVariables,
-  APITypes.GetPostDataModelTestingQuery
->;
-export const listPostDataModelTestings = /* GraphQL */ `query ListPostDataModelTestings(
-  $filter: TablePostDataModelTestingFilterInput
+` as GeneratedQuery<APITypes.GetPostQueryVariables, APITypes.GetPostQuery>;
+export const listPosts = /* GraphQL */ `query ListPosts(
+  $filter: ModelPostFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  listPostDataModelTestings(
+  listPosts(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      title
+      content
+      username
+      coverImage
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+` as GeneratedQuery<APITypes.ListPostsQueryVariables, APITypes.ListPostsQuery>;
+export const postsByUsername = /* GraphQL */ `query PostsByUsername(
+  $username: String!
+  $sortDirection: ModelSortDirection
+  $filter: ModelPostFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  postsByUsername(
+    username: $username
+    sortDirection: $sortDirection
     filter: $filter
     limit: $limit
     nextToken: $nextToken
@@ -36,8 +60,10 @@ export const listPostDataModelTestings = /* GraphQL */ `query ListPostDataModelT
       id
       title
       content
-      coverImage
       username
+      coverImage
+      createdAt
+      updatedAt
       __typename
     }
     nextToken
@@ -45,6 +71,6 @@ export const listPostDataModelTestings = /* GraphQL */ `query ListPostDataModelT
   }
 }
 ` as GeneratedQuery<
-  APITypes.ListPostDataModelTestingsQueryVariables,
-  APITypes.ListPostDataModelTestingsQuery
+  APITypes.PostsByUsernameQueryVariables,
+  APITypes.PostsByUsernameQuery
 >;

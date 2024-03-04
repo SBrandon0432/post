@@ -8,45 +8,60 @@ type GeneratedMutation<InputType, OutputType> = string & {
   __generatedMutationOutput: OutputType;
 };
 
-export const createPostDataModelTesting = /* GraphQL */ `mutation CreatePostDataModelTesting($input: CreatePostDataModelTestingInput!) {
-  createPostDataModelTesting(input: $input) {
+export const createPost = /* GraphQL */ `mutation CreatePost(
+  $input: CreatePostInput!
+  $condition: ModelPostConditionInput
+) {
+  createPost(input: $input, condition: $condition) {
     id
     title
     content
-    coverImage
     username
+    coverImage
+    createdAt
+    updatedAt
     __typename
   }
 }
 ` as GeneratedMutation<
-  APITypes.CreatePostDataModelTestingMutationVariables,
-  APITypes.CreatePostDataModelTestingMutation
+  APITypes.CreatePostMutationVariables,
+  APITypes.CreatePostMutation
 >;
-export const updatePostDataModelTesting = /* GraphQL */ `mutation UpdatePostDataModelTesting($input: UpdatePostDataModelTestingInput!) {
-  updatePostDataModelTesting(input: $input) {
+export const updatePost = /* GraphQL */ `mutation UpdatePost(
+  $input: UpdatePostInput!
+  $condition: ModelPostConditionInput
+) {
+  updatePost(input: $input, condition: $condition) {
     id
     title
     content
-    coverImage
     username
+    coverImage
+    createdAt
+    updatedAt
     __typename
   }
 }
 ` as GeneratedMutation<
-  APITypes.UpdatePostDataModelTestingMutationVariables,
-  APITypes.UpdatePostDataModelTestingMutation
+  APITypes.UpdatePostMutationVariables,
+  APITypes.UpdatePostMutation
 >;
-export const deletePostDataModelTesting = /* GraphQL */ `mutation DeletePostDataModelTesting($input: DeletePostDataModelTestingInput!) {
-  deletePostDataModelTesting(input: $input) {
+export const deletePost = /* GraphQL */ `mutation DeletePost(
+  $input: DeletePostInput!
+  $condition: ModelPostConditionInput
+) {
+  deletePost(input: $input, condition: $condition) {
     id
     title
     content
-    coverImage
     username
+    coverImage
+    createdAt
+    updatedAt
     __typename
   }
 }
 ` as GeneratedMutation<
-  APITypes.DeletePostDataModelTestingMutationVariables,
-  APITypes.DeletePostDataModelTestingMutation
+  APITypes.DeletePostMutationVariables,
+  APITypes.DeletePostMutation
 >;
